@@ -1,0 +1,873 @@
+<!DOCTYPE html>
+<html lang="sq">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta property="og:title" content="DUBAI-F | Më shumë se një butik">
+  <meta property="og:description"
+    content="Veshje me stil, produkte natyrale autentike, mjaltë të pastër, parfuma dhe libra për një mënyrë jetese të rafinuar.">
+  <meta property="og:image" content="https://domaine-yt.com/preview.jpg">
+  <meta property="og:url" content="https://domaine-yt.com">
+  <meta property="og:type" content="website">
+
+  <title>DUBAI-F</title>
+<link rel="icon" type="image/png" href="assets/Logo.png">
+  <!-- Importimi i Fonteve: Montserrat dhe Lato -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Montserrat:wght@400;600&display=swap');
+  </style>
+
+  <!-- Importimi i Ikonave (Për Social Media & WhatsApp) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    /* --- VARIABLAT E STILIT --- */
+    :root {
+      --primary-red: #C00000;
+      --bg-white: #FFFFFF;
+      --bg-light-grey: #F5F5F5;
+      --text-dark: #333333;
+      --text-light: #666666;
+      --font-headers: 'Montserrat', sans-serif;
+      --font-body: 'Lato', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-white);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-weight: 300;
+    }
+
+    h1,
+    h2,
+    h3 {
+      font-family: var(--font-headers);
+      color: var(--text-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+
+      padding: 22px 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+    }
+
+
+    .brand {
+      font-family: var(--font-headers);
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-red);
+      text-decoration: none;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-dark);
+      font-family: var(--font-headers);
+      font-size: 0.9rem;
+      font-weight: 400;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: var(--primary-red);
+    }
+
+    .intro {
+      text-align: center;
+      padding: 100px 20px;
+      max-width: 780px;
+      margin: 0 auto;
+    }
+
+    .intro h1 {
+      font-size: 3.8rem;
+      margin-bottom: 26px;
+      color: var(--primary-red);
+      /* brand */
+      letter-spacing: 4px;
+      font-weight: 700;
+    }
+
+    .intro h3 {
+      font-size: 1.1rem;
+      margin-bottom: 26px;
+      color: var(--text-dark);
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .intro p {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+
+
+    section {
+      padding: 80px 5%;
+      cursor: pointer;
+    }
+    section a {
+          text-decoration: none;
+    }
+
+    .bg-white {
+      background-color: var(--bg-white);
+    }
+
+    .bg-grey {
+      background-color: var(--bg-light-grey);
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-header h2 {
+      font-size: 2.2rem;
+      color: var(--primary-red);
+      margin-bottom: 14px;
+      letter-spacing: 3px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+
+    .section-header .divider {
+      width: 50px;
+      height: 2px;
+      background-color: var(--text-dark);
+      margin: 0 auto;
+    }
+
+    /* --- PRODUKTET (s'po i prekim) --- */
+    .product-card {
+      background: transparent;
+      transition: transform 0.4s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .image-frame {
+      width: 100%;
+      height: 450px;
+      /* MOS E PREKIM */
+      overflow: hidden;
+      margin-bottom: 20px;
+      background-color: #eee;
+    }
+
+    .image-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.03);
+    }
+
+    .product-info {
+      text-align: center;
+    }
+
+    .product-title {
+      font-family: var(--font-headers);
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: var(--text-dark);
+    }
+
+    .product-desc {
+      font-size: 0.9rem;
+      color: var(--text-light);
+      font-style: italic;
+    }
+
+    /* ================= SLIDER (auto + drag) - pa ndryshu madhësinë e fotove ================= */
+    .slider {
+      overflow: hidden;
+      cursor: grab;
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: pan-y;
+    }
+
+    .slider:active {
+      cursor: grabbing;
+    }
+
+    .slider-track {
+      display: flex;
+      gap: 40px;
+      will-change: transform;
+      transition: transform 0.25s ease;
+    }
+
+    .slider-track .product-card {
+      flex: 0 0 calc((100% - 80px) / 3);
+    }
+
+    @media (max-width: 992px) {
+      .slider-track .product-card {
+        flex-basis: calc((100% - 40px) / 2);
+      }
+    }
+
+    @media (max-width: 600px) {
+      .slider-track .product-card {
+        flex-basis: 85%;
+      }
+    }
+
+    footer {
+      background-color: #222;
+      color: #fff;
+      padding: 60px 5%;
+      margin-top: 50px;
+    }
+
+    .footer-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+      gap: 40px;
+    }
+
+    .footer-location {
+      margin-top: 14px;
+      font-size: 1rem;
+      color: white;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-location i {
+      color: var(--primary-red);
+      margin-right: 6px;
+    }
+
+    .footer-brand h3 {
+      color: #fff;
+      font-size: 1.8rem;
+      margin-bottom: 10px;
+    }
+
+    .footer-brand p {
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    .footer-social {
+      text-align: center;
+    }
+
+    .footer-social h4 {
+      font-family: var(--font-headers);
+      font-size: 0.9rem;
+      margin-bottom: 15px;
+      color: #aaa;
+      text-transform: uppercase;
+    }
+
+    .social-icons a {
+      font-size: 1.5rem;
+      color: #fff;
+      margin: 0 15px;
+      transition: color 0.3s ease;
+    }
+
+    .social-icons a:hover {
+      color: var(--primary-red);
+    }
+
+    .footer-contact {
+      text-align: right;
+    }
+
+    .whatsapp-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background-color: transparent;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 12px 25px;
+      font-family: var(--font-headers);
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .whatsapp-btn:hover {
+      background-color: var(--primary-red);
+      border-color: var(--primary-red);
+      color: white;
+    }
+    /* BASE */
+.reveal {
+  opacity: 0;
+  transition: 
+    opacity 0.8s cubic-bezier(.25,.8,.25,1),
+    transform 0.8s cubic-bezier(.25,.8,.25,1);
+  will-change: transform, opacity;
+}
+
+/* NGA POSHTË */
+.reveal-up {
+  transform: translateY(40px);
+}
+
+/* NGA LART */
+.reveal-down {
+  transform: translateY(-40px);
+}
+
+/* NGA E DJATHTA */
+.reveal-right {
+  transform: translateX(50px);
+}
+
+/* NGA E MAJTA */
+.reveal-left {
+  transform: translateX(-50px);
+}
+
+/* KUR SHFAQET */
+.reveal.show {
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+
+    .copyright {
+      text-align: center;
+      margin-top: 50px;
+      border-top: 1px solid #444;
+      padding-top: 20px;
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    @media (max-width: 768px) {
+      .footer-container {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-contact {
+        text-align: center;
+      }
+
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+      header {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    /* === MODAL IMAGE POPUP === */
+.modal {
+  display: none; /* fshehur fillimisht */
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 10px;
+  object-fit: contain;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--primary-red);
+}
+  </style>
+</head>
+
+<body>
+  <div id="imgModal" class="modal">
+  <span class="modal-close">&times;</span>
+  <img class="modal-content" id="modalImg" src="">
+</div>
+  <header class="reveal reveal-down">
+    <a href="#" class="brand">DUBAI-F</a>
+    <nav>
+     <nav>
+  <ul>
+<li><a href="#veshje">Veshje</a></li>
+<li><a href="#natyrale">Natyrale</a></li>
+<li><a href="#parfuma">Parfuma</a></li>
+<li><a href="#libra">Libra</a></li>
+
+  </ul>
+</nav>
+    </nav>
+  </header>
+
+  <section class="intro reveal reveal-up">
+    <h1 style="color: #C00000;">DUBAI-F</h1>
+    <h3>ELEGANCA ËSHTË NJË ZGJEDHJE.</h3>
+    <p>
+      NGA VESHJET E KURUARA ME SHIJE, TE PARFUMET, LIBRAT DHE FUQIA E PRODUKTEVE NATYRALE SI MJALTA – ÇDO DETAJ ËSHTË
+      PËRZGJEDHUR PËR STIL, MIRËQENIE DHE CILËSI.
+    </p>
+  </section>
+
+  <!-- VESHJE -->
+  <section id="veshje" class="bg-white reveal reveal-left">
+    <div class="section-header">
+      <a href=""><h2>Veshje Elegante</h2></a>
+      <div class="divider"></div>
+    </div>
+
+    <div class="slider" data-slider>
+      <div class="slider-track" data-track="veshje"></div>
+    </div>
+  </section>
+
+
+
+  <!-- NATYRALE -->
+  <section id="natyrale" class="bg-white reveal reveal-right">
+    <div class="section-header">
+      <a href=""><h2>Produkte Natyrale</h2></a>
+      <div class="divider"></div>
+    </div>
+
+    <div class="slider" data-slider>
+      <div class="slider-track" data-track="natyrale"></div>
+    </div>
+  </section>
+
+  <!-- Parfuma -->
+  <section id="parfuma" class="bg-grey reveal reveal-right">
+    <div class="section-header">
+      <a href=""><h2>Parfuma</h2></a>
+      <div class="divider"></div>
+    </div>
+
+    <div class="slider" data-slider>
+      <div class="slider-track" data-track="parfuma"></div>
+    </div>
+  </section>
+
+  <!-- libra -->
+  <section id="libra" class="bg-grey reveal reveal-right>">
+    <div class="section-header">
+      <a href=""><h2>Libra</h2></a>
+      <div class="divider"></div>
+    </div>
+
+    <div class="slider" data-slider>
+      <div class="slider-track" data-track="libra"></div>
+    </div>
+  </section>
+
+
+  <footer class="reveal reveal-up">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <h3>DUBAI-F</h3>
+        <p>Elegancë & Cilësi</p>
+      </div>
+
+      <div class="footer-social">
+        <h4>Na Ndiqni</h4>
+        <div class="social-icons">
+         <a 
+  href="https://www.instagram.com/dubai_f05/" 
+  target="_blank" 
+  rel="noopener"
+  aria-label="Instagram DUBAI-F"
+>
+  <i class="fab fa-instagram"></i>
+</a>
+
+            <!-- <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a> -->
+        </div>
+      </div>
+
+      <div class="footer-contact">
+        <a href="https://wa.me/+38344880850" class="whatsapp-btn">
+          <i class="fab fa-whatsapp"></i> Contact Us
+        </a>
+        <p class="footer-location">
+          <i class="fas fa-map-marker-alt"></i>
+          Rr. Vëllezërit Gërvalla, Ferizaj 70000
+        </p>
+
+      </div>
+    </div>
+
+    <div class="copyright">
+      <p>&copy; 2026 DUBAI-F. Të gjitha të drejtat të rezervuara.</p>
+    </div>
+  </footer>
+
+  <script>
+    // ============================
+    // 1) TË DHËNAT E PRODUKTEVE (10 për secilin seksion)
+    // ============================
+    const PRODUCTS = {
+      veshje: [
+        { title: "", desc: "", img: "assets/veshje/image (1).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (5).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (3).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (7).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (9).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (6).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (11).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (13).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (15).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (17).jpg" },
+        { title: "", desc: "", img: "assets/veshje/image (18).jpg" },
+      ],
+    natyrale: [
+  { 
+    title: "Maca", 
+    desc: "", 
+    img: "assets/natyrale/Maca.jpg" 
+  },
+  { 
+    title: "Mjaltë i Fares së Zezë", 
+    desc: "", 
+    img: "assets/natyrale/MjaltEfaresSEZeze.jpg" 
+  },
+  { 
+    title: "Vaj i Fares së Zezë", 
+    desc: "", 
+    img: "assets/natyrale/vajIfaresseZeze.jpg" 
+  },
+  { 
+    title: "Vazelinë Natyrale", 
+    desc: "", 
+    img: "assets/natyrale/Vazelin.jpg" 
+  },
+  { 
+    title: "Ginseng", 
+    desc: "", 
+    img: "assets/natyrale/Ginseng.jpg" 
+  },
+  { 
+    title: "Mjaltë Bio", 
+    desc: "", 
+    img: "assets/natyrale/MjaltBio.jpg" 
+  },
+  { 
+    title: "Sapun i Fares së Zezë", 
+    desc: "", 
+    img: "assets/natyrale/SapunIfaresSeZeze.jpg" 
+  },
+  { 
+    title: "Shampo Sulphur", 
+    desc: "", 
+    img: "assets/natyrale/SulphurShampon.jpg" 
+  },
+  { 
+    title: "Zemzem", 
+    desc: "", 
+    img: "assets/natyrale/zemzem.jpg" 
+  },
+  { 
+    title: "Zemzem", 
+    desc: "", 
+    img: "assets/natyrale/zemzem1.jpg" 
+  }
+],
+      libra: [
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image (1).jpg"
+        },
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image (2).jpg"
+        },
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image (3).jpg"
+        },
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image (4).jpg"
+        },
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image (5).jpg"
+        },
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image (19).jpg"
+        },
+        {
+          title: "",
+          desc: "",
+          img: "assets/libra/image.jpg"
+        }
+      ],
+      parfuma: [
+        {
+          title: "Xerjoff – Erba Pura",
+          desc: "Luksoz, intensiv, i paharrueshëm",
+          img: "assets/parfuma/Xerjoff – Erba Pura.png"
+        },
+        {
+          title: "Jean Paul Gaultier – Le Male Elixir",
+          desc: "I ëmbël, intensiv, luksoz",
+          img: "assets/parfuma/Jean Paul Gaultier – Le Male Elixir.png"
+        },
+        {
+          title: "Hugo Boss – Boss Bottled Night",
+          desc: "Elegant, misterioz, maskulin",
+          img: "assets/parfuma/Hugo Boss – Boss Bottled Night.png"
+        },
+        {
+          title: "Paco Rabanne – 1 Million",
+          desc: "Ikonik, i ëmbël, luksoz",
+          img: "assets/parfuma/Paco Rabanne – 1 Million.png"
+        },
+        {
+          title: "Gisada – Ambassador for Men",
+          desc: "Stil arab, i fortë & elegant",
+          img: "assets/parfuma/Gisada – Ambassador for Men.png"
+        }
+      ]
+
+
+
+    };
+
+    // ============================
+    // 2) RENDERIMI I PRODUKTEVE (gjeneron article automatikisht)
+    // ============================
+    function renderProducts(trackEl, items) {
+      trackEl.innerHTML = items.map(p => `
+        <article class="product-card">
+          <div class="image-frame">
+            <img src="${p.img}" alt="${p.title}">
+          </div>
+          <div class="product-info">
+            <h3 class="product-title">${p.title}</h3>
+            <p class="product-desc">${p.desc}</p>
+          </div>
+        </article>
+      `).join("");
+    }
+
+    // Mbush track-ët
+    document.querySelectorAll(".slider-track[data-track]").forEach(trackEl => {
+      const key = trackEl.getAttribute("data-track");
+      renderProducts(trackEl, PRODUCTS[key] || []);
+    });
+
+    // ============================
+    // 3) SLIDER: autoplay + drag (pa butona)
+    // ============================
+    document.querySelectorAll("[data-slider]").forEach((slider) => {
+      const track = slider.querySelector(".slider-track");
+      let x = 0;
+
+      const speed = 0.6;
+      let isDown = false;
+      let startX = 0;
+      let startTranslate = 0;
+      let pause = false;
+
+      const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
+
+      const maxLeft = () => {
+        const overflow = track.scrollWidth - slider.clientWidth;
+        return -Math.max(0, overflow);
+      };
+
+      const tick = () => {
+        if (!isDown && !pause) {
+          x -= speed;
+          if (x <= maxLeft()) x = 0;
+          track.style.transform = `translateX(${x}px)`;
+        }
+        requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+
+      slider.addEventListener("mouseenter", () => (pause = true));
+      slider.addEventListener("mouseleave", () => (pause = false));
+
+      slider.addEventListener("mousedown", (e) => {
+        isDown = true;
+        pause = true;
+        startX = e.clientX;
+        startTranslate = x;
+        track.style.transition = "none";
+      });
+
+      window.addEventListener("mouseup", () => {
+        if (!isDown) return;
+        isDown = false;
+        track.style.transition = "transform 0.25s ease";
+        pause = false;
+      });
+
+      window.addEventListener("mousemove", (e) => {
+        if (!isDown) return;
+        const dx = e.clientX - startX;
+        x = clamp(startTranslate + dx, maxLeft(), 0);
+        track.style.transform = `translateX(${x}px)`;
+      });
+
+      slider.addEventListener("touchstart", (e) => {
+        isDown = true;
+        pause = true;
+        startX = e.touches[0].clientX;
+        startTranslate = x;
+        track.style.transition = "none";
+      }, { passive: true });
+
+      slider.addEventListener("touchend", () => {
+        isDown = false;
+        track.style.transition = "transform 0.25s ease";
+        pause = false;
+      });
+
+      slider.addEventListener("touchmove", (e) => {
+        if (!isDown) return;
+        const dx = e.touches[0].clientX - startX;
+        x = clamp(startTranslate + dx, maxLeft(), 0);
+        track.style.transform = `translateX(${x}px)`;
+      }, { passive: true });
+
+      window.addEventListener("resize", () => {
+        x = clamp(x, maxLeft(), 0);
+        track.style.transform = `translateX(${x}px)`;
+      });
+    });
+    //animations on scroll reveal
+ const reveals = document.querySelectorAll(".reveal");
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("show");
+      } else {
+        entry.target.classList.remove("show");
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+reveals.forEach(el => observer.observe(el));
+
+// Modal Image Pop-up
+const modal = document.getElementById("imgModal");
+const modalImg = document.getElementById("modalImg");
+const closeBtn = document.querySelector(".modal-close");
+
+// Shto event listener te të gjitha fotot e produktit
+document.querySelectorAll(".product-card img").forEach(img => {
+  img.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalImg.src = img.src;
+  });
+});
+
+// Mbyll modalin kur klikojmë "X"
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+});
+
+// Mbyll modalin kur klikojmë jashtë imazhit
+modal.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    modal.style.display = "none";
+  }
+});
+  </script>
+</body>
+
+</html>
